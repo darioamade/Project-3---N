@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+   font-size: 62.5%; //1rem=10px; 10px/16px=62.5%
+    /*was 10px=1rem but for better pratice we dont 10/16=0.625 =62,5% or difines what 1 ram shoud be*/ 
+  /*
+    @include respond(phone) {
+      font-size: 50%;
+    }  wed this one cos the second one applys to 50% */
+
+    @include respond(tab-land) { //width < 1200?
+      font-size: 56.25%; //1 rem = 9px, 9/16=56.25%
+    }
+
+    @include respond(tab-port) { //width < 900?
+      font-size: 50%; //1 rem = 8px, 8/16=50%
+    }
+
+    
+    @include respond(phone) {              //width < 600?
+      font-size: 30%;                       //1 rem = 4.8px, 4.8/16=30%
+    }  
+    
+    @include respond(big-desktop) {
+      font-size: 75%;  ////1 rem = 12px, 12/16=75% (i choice which font i want or looks best)
+    }
+
+  }
+
+
+    body {
+        box-sizing: border-box;
+        padding: 3rem; 
+
+
+        @include respond(tab-port) {
+          padding: 0;
+        }
+     }
+
+     ::selection {
+       background-color: $color-primary;
+       color:$color-white ;
+     }
+
+
